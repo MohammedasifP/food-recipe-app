@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/navbar.css">
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body{
+            background-color: grey;
+        }
+        .maindiv>div{
+               display: flex;
+               background-color: sandybrown;
+               width: 90%;
+               margin: auto;
+              margin-top: 1px;
+              margin-bottom: 1px;
+               gap: 2px;
+        }
+        .maindiv>div>p{
+            font-size: 21px;
+            text-align: left;
+            line-height: 1.4;
+            border: 5px solid rgba(35, 24, 13, 0.904);
+        }
+        .maindiv>div>img{
+            height: 500px;
+            border: 5px solid rgba(35, 24, 13, 0.904);
+        }
+        .link{
+            border: 1px solid sandybrown;
+            height: 100px;
+            background-color: rgba(35, 24, 13, 0.904);
+        }
+        .link>a{
+            margin-top: 10px;
+            font-size: 25px;
+            color: sandybrown;
+            position: relative;
+            animation-name: asif;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes asif{
+              0%{
+                  left: 0px;
+                  right: 0px;
+                  top: 30px;
+              }
+              99%{
+                  left: 400px;
+                  color: sandybrown;
+                  top: 30px;
+                  font-family: 30px;
+              }
+              100%{
+                   left: 0px;
+                  top: 30px;
+                  
+              }
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+    <div class="maindiv"></div>
+    <div class="link">
+    </div>
+</body>
+</html>
+<script type="module">
+  import navigationbar from './component/navbar.js'
+  document.querySelector('.container').innerHTML=navigationbar();
+  var data=JSON.parse(localStorage.getItem("recepiedata"))||[];
+     console.log(data)
+    fun(data)
+
+    function fun(data){
+        var image=document.createElement('img')
+        var p1=document.createElement("p");
+        var d=document.createElement('div')
+        var anchor=document.createElement('a')
+             image.src=data.strMealThumb;
+             image.style.width="600px"
+             p1.textContent=data.strInstructions;
+             anchor.href=data.strYoutube;
+             anchor.textContent=data.strYoutube;
+            document.querySelector('.link').append(anchor)
+              console.log(data.strYoutube)
+        var x=document.querySelector('.maindiv')
+             x.innerHTML="";
+             d.append(image,p1);
+             x.append(d);
+    }
+</script>

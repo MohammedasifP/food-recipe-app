@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/menue.css">
+</head>
+<body>
+    <div class="container"></div>
+    <div class="maincontainer"></div>
+</body>
+</html>
+<script type="module">
+import navigationbar from './component/navbar.js'
+document.querySelector('.container').innerHTML=navigationbar()
+
+import getdata from './component/fetching.js'
+
+fun()
+
+async function fun(){
+  var data=await getdata('c')
+       var arr=data.meals
+      var div=document.querySelector('.maincontainer')
+          div.innerHTML="";
+      arr.map((elem)=>{
+          var p1=document.createElement('p');
+          var image=document.createElement('img');
+              image.style.width="370px"
+              image.style.height="270px"
+              image.style.borderRadius="5PX"
+           var sdiv=document.createElement('div');
+               sdiv.addEventListener('click',function(){
+                   var obj=elem;
+                   localStorage.setItem("recepiedata",JSON.stringify(obj))
+                   window.location.href="recepie.html"
+               })
+                   
+              p1.textContent=elem.strMeal;
+               p1.setAttribute('class','title')
+              image.src=elem.strMealThumb;
+              sdiv.append(image,p1);
+              div.append(sdiv)
+      })
+      }
+
+</script>

@@ -1,0 +1,33 @@
+
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body{
+            background-color: grey;
+        }
+        .maincontainer{
+            width: 80%;
+            border: 1px solid black;
+            background-color: rgba(35, 24, 13, 0.904);
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            text-align: center;
+            margin-top: 1px;
+            gap: 10px;
+            padding: 40px;
+            
+        }
+        .maincontainer>div{
+            border: 1px solid black;
+            background-color: sandybrown;
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .title{
+            font-size: 25px;
+            font-weight: bold;
+            color: rgba(35, 24, 13, 0.904);
+        }
+    

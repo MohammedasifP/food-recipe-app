@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/search.css">   
+    <script src="https://kit.fontawesome.com/3347d6e76d.js" crossorigin="anonymous"></script>
+    <title>Food recepie App</title>         
+</head>
+<body>
+    <div class="container"></div>
+    <p class="qoute">When you eat food with your family and friends, it always tastes better!</p>
+    <div class="inputdiv">
+        <h4>Find any food recepie by first letter<h4>
+        <input type="text" id="inp" placeholder="">
+        <button class="btn"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="d1">
+        <img class="img1" src="https://www.ning.com/wp-content/uploads/2019/05/create-food-website.jpg">
+    </div>
+</body>
+</html>
+<script type="module" >
+    var arr=[];
+    import navigationbar from './component/navbar.js'
+    document.querySelector('.container').innerHTML=navigationbar()
+    import getdata from './component/fetching.js'
+
+   var b=document.querySelector('.btn');
+       b.addEventListener('click',fun)
+     
+       async function fun(){
+           var x=document.querySelector('#inp').value;
+              if(x.length>1){
+                  alert("please enter first character of your dish")
+              }
+              else{
+            var data=await getdata(x);
+            localStorage.setItem("dataarr",JSON.stringify(data))
+           window.location.href="menu.html"}
+        }
+       
+</script>

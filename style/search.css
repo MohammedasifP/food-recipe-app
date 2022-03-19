@@ -1,0 +1,51 @@
+.img1{
+    height: 645px;
+    width: 100%;
+    margin-top: 0px;  
+}
+.inputdiv{
+    position: fixed;
+    
+    margin-top: 200px;
+    margin-left: 280px;
+
+}
+#inp{
+         width: 400px;
+         height: 64px;
+         font-size: 30px;
+         border-radius: 7px;
+         border: 1px solid sandybrown;
+         background-color: rgba(35, 24, 13, 0.904);
+         margin-top: 10px;
+         color: sandybrown;
+         text-align: center;
+}
+.btn{
+    height: 60px;
+    width: 80px;
+    border-radius: 7px;
+    border: 1px solid sandybrown;
+    margin-left: 0px;
+    background-color: rgba(35, 24, 13, 0.904);
+    color:rgba(35, 24, 13, 0.904);
+    font-size: 28px;
+    color: sandybrown;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+h4{
+    color: sandybrown;
+    font-size: 21px;
+}
+.qoute{
+    position: fixed;
+    margin-top: 130px;
+    margin-left: 280px;
+    font-size: 28px;
+    color: sandybrown;
+}
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
